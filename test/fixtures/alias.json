@@ -1,0 +1,12 @@
+{
+  "input": {
+    "type": "alias",
+    "previousId": "previous-id",
+    "userId": "user-id"
+  },
+  "output": {
+    "old_actor": "previous-id",
+    "write_key": "0e116d3930b329831f146716c3667dfe",
+    "new_actor": "user-id"
+  }
+}

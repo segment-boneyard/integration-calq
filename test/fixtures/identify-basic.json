@@ -1,0 +1,31 @@
+{
+  "input": {
+    "type": "identify",
+    "userId": "user-id",
+    "traits": {
+      "avatar": "https://some.url/avatar.jpg",
+      "country": "US",
+      "name": "John Doe",
+      "gender": "male",
+      "email": "jd@example.com",
+      "phone": "55555",
+      "city": "some-city",
+      "age": 3e3
+    }
+  },
+  "output": {
+    "actor": "user-id",
+    "write_key": "0e116d3930b329831f146716c3667dfe",
+    "properties": {
+      "$image_url": "https://some.url/avatar.jpg",
+      "$country": "US",
+      "$full_name": "John Doe",
+      "$gender": "male",
+      "$email": "jd@example.com",
+      "$phone": "55555",
+      "$city": "some-city",
+      "$age": 3e3,
+      "id": "user-id"
+    }
+  }
+}

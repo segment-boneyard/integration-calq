@@ -1,0 +1,26 @@
+{
+  "userId": "user-id",
+  "traits": {
+    "fat": 0.02,
+    "firstName": "John",
+    "Last Name": "Doe",
+    "email": "testing-user-id@segment.io",
+    "company": "Segment.io",
+    "city": "San Francisco",
+    "state": "CA",
+    "phone": "5555555555",
+    "websites": [
+      "http://calv.info",
+      "http://ianstormtaylor.com",
+      "http://ivolo.me",
+      "http://rein.pk"
+    ],
+    "bad": null,
+    "userAgent": "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)"
+  },
+  "context": {
+    "ip": "12.212.12.49"
+  },
+  "channel": "server",
+  "type": "identify"
+}

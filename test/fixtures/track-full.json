@@ -1,0 +1,43 @@
+{
+  "input": {
+    "type": "track",
+    "event": "my-event",
+    "userId": "user-id",
+    "properties": {
+      "revenue": 19.19,
+      "currency": "USD"
+    },
+    "context": {
+      "ip": "10.0.0.1",
+      "userAgent": "user-agent",
+      "screen": {
+        "width": 500,
+        "height": 400
+      },
+      "campaign": {
+        "name": "utm-name",
+        "source": "utm-source",
+        "medium": "utm-medium",
+        "content": "utm-content",
+        "term": "utm-term"
+      }
+    }
+  },
+  "output": {
+    "actor": "user-id",
+    "write_key": "0e116d3930b329831f146716c3667dfe",
+    "action_name": "my-event",
+    "ip_address": "10.0.0.1",
+    "properties": {
+      "$device_agent": "user-agent",
+      "$device_resolution": "500x400",
+      "$sale_currency": "USD",
+      "$sale_value": 19.19,
+      "$utm_campaign": "utm-name",
+      "$utm_source": "utm-source",
+      "$utm_medium": "utm-medium",
+      "$utm_content": "utm-content",
+      "$utm_term": "utm-term"
+    }
+  }
+}

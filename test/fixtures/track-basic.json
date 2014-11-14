@@ -1,0 +1,14 @@
+{
+  "input": {
+    "type": "track",
+    "event": "my-event",
+    "userId": "user-id",
+    "properties": {}
+  },
+  "output": {
+    "actor": "user-id",
+    "properties": {},
+    "write_key": "0e116d3930b329831f146716c3667dfe",
+    "action_name": "my-event"
+  }
+}
