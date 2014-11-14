@@ -1,8 +1,8 @@
-[![Build Status](https://circleci.com/gh/segmentio/integration-calq.png)](https://circleci.com/gh/segmentio/integration-calq)
+[![Build Status](https://circleci.com/gh/segmentio/integration-calq/tree/master.png?style=badge)](https://circleci.com/gh/segmentio/integration-calq/tree/master)
 
-# Calq server-side integration.
+# integration-calq
 
-Write me...
+Calq server-side integration for Segment.
 
 
 ## License
