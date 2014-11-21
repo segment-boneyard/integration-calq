@@ -1,6 +1,6 @@
 {
   "name": "integration-calq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Calq server-side integration",
   "author": "Segment <friends@segment.com>",
