@@ -22,8 +22,7 @@ describe('Calq', function () {
     test
       .name('Calq')
       .channels(['server', 'client', 'mobile'])
-      .ensure('settings.writeKey')
-      .retries(3);
+      .ensure('settings.writeKey');
   });
 
   describe('.validate()', function () {
