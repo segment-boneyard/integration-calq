@@ -1,4 +1,10 @@
 
+1.1.0 / 2015-02-20
+==================
+
+  * updating calq to pass through the event's original timestamp
+  * Update circle template
+
 1.0.6 / 2014-12-08
 ==================
 
