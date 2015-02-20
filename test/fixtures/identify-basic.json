@@ -2,6 +2,7 @@
   "input": {
     "type": "identify",
     "userId": "user-id",
+    "timestamp": "2014",
     "traits": {
       "avatar": "https://some.url/avatar.jpg",
       "country": "US",
@@ -16,6 +17,7 @@
   "output": {
     "actor": "user-id",
     "write_key": "0e116d3930b329831f146716c3667dfe",
+    "timestamp": "2014-01-01T00:00:00.000Z",
     "properties": {
       "$image_url": "https://some.url/avatar.jpg",
       "$country": "US",
