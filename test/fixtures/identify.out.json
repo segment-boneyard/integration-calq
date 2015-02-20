@@ -1,5 +1,6 @@
 {
   "actor": "user-id",
+  "timestamp": "2014-01-01T00:00:00.000Z",
   "properties": {
     "fat": 0.02,
     "firstName": "John",

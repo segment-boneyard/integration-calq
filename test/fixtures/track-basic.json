@@ -3,10 +3,12 @@
     "type": "track",
     "event": "my-event",
     "userId": "user-id",
+    "timestamp": "2014",
     "properties": {}
   },
   "output": {
     "actor": "user-id",
+    "timestamp": "2014-01-01T00:00:00.000Z",
     "properties": {},
     "write_key": "0e116d3930b329831f146716c3667dfe",
     "action_name": "my-event"

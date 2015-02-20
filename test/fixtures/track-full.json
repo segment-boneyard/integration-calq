@@ -3,6 +3,7 @@
     "type": "track",
     "event": "my-event",
     "userId": "user-id",
+    "timestamp": "2014",
     "properties": {
       "revenue": 19.19,
       "currency": "USD"
@@ -28,6 +29,7 @@
     "write_key": "0e116d3930b329831f146716c3667dfe",
     "action_name": "my-event",
     "ip_address": "10.0.0.1",
+    "timestamp": "2014-01-01T00:00:00.000Z",
     "properties": {
       "$device_agent": "user-agent",
       "$device_resolution": "500x400",

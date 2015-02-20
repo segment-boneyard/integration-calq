@@ -2,11 +2,13 @@
   "input": {
     "type": "alias",
     "previousId": "previous-id",
-    "userId": "user-id"
+    "userId": "user-id",
+    "timestamp": "2014"
   },
   "output": {
     "old_actor": "previous-id",
     "write_key": "0e116d3930b329831f146716c3667dfe",
-    "new_actor": "user-id"
+    "new_actor": "user-id",
+    "timestamp": "2014-01-01T00:00:00.000Z"
   }
 }
