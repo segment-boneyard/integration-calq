@@ -79,13 +79,12 @@ describe('Calq', function () {
         .expects(200, done);
     });
 
-    it('should return error and 200 on an invalid write key', function(done){
+    it('should error on an invalid write key', function(done){
       test
         .set({ writeKey: 'bad-key' })
         .track(helpers.track())
-        .expects({"status":"rejected","error":"The write_key \"bad-key\" did not match any known keys."})
-        .expects(200)
-        .error('The write_key \"bad-key\" did not match any known keys.', done);
+        .expects(403)
+        .error('cannot POST /track (403)', done);
     });
   });
 
@@ -103,9 +102,8 @@ describe('Calq', function () {
       test
         .set({ writeKey: 'bad-key' })
         .identify(json.input)
-        .expects({'status':'rejected','error':'The write_key "bad-key" did not match any known keys.'})
-        .expects(200)
-        .error('The write_key "bad-key" did not match any known keys.', done);
+        .expects(403)
+        .error('cannot POST /profile (403)', done);
     });
   });
 
@@ -123,8 +121,8 @@ describe('Calq', function () {
       test
         .set({ writeKey: 'bad-key' })
         .alias(json.input)
-        .expects(400)
-        .error('cannot POST /transfer (400)', done);
+        .expects(403)
+        .error('cannot POST /transfer (403)', done);
     });
   });
 
