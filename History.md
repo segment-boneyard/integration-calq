@@ -1,4 +1,10 @@
 
+1.2.0 / 2015-09-02
+==================
+
+  * Change bad-key handling from 200 to 403 response per Calq's note in the PR
+  * Add support for page and screen calls 
+
 1.1.0 / 2015-02-20
 ==================
 
