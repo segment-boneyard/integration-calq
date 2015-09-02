@@ -1,0 +1,23 @@
+{
+  "input": {
+    "type": "page",
+    "userId": "user-id",
+    "timestamp": "2014",
+    "category": "Docs",
+    "name": "Calq Integration",
+    "properties": {
+      "url": "https://segment.io/docs/integrations/calq"
+    }
+  },
+  "output": {
+    "actor": "user-id",
+    "properties": {
+		"$view_name": "Calq Integration",
+		"category": "Docs",
+		"$view_url": "https://segment.io/docs/integrations/calq"
+	},
+    "write_key": "0e116d3930b329831f146716c3667dfe",
+    "timestamp": "2014-01-01T00:00:00.000Z",
+    "action_name": "Page View"
+  }
+}

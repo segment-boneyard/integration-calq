@@ -83,8 +83,8 @@ describe('Calq', function () {
       test
         .set({ writeKey: 'bad-key' })
         .track(helpers.track())
-        .expects(400)
-        .error('cannot POST /track (400)', done);
+        .expects(403)
+        .error('cannot POST /track (403)', done);
     });
   });
 
@@ -102,8 +102,8 @@ describe('Calq', function () {
       test
         .set({ writeKey: 'bad-key' })
         .identify(json.input)
-        .expects(400)
-        .error('cannot POST /profile (400)', done);
+        .expects(403)
+        .error('cannot POST /profile (403)', done);
     });
   });
 
@@ -121,8 +121,67 @@ describe('Calq', function () {
       test
         .set({ writeKey: 'bad-key' })
         .alias(json.input)
-        .expects(400)
-        .error('cannot POST /transfer (400)', done);
+        .expects(403)
+        .error('cannot POST /transfer (403)', done);
     });
   });
+
+  describe('.page()', function(){
+    it('should be able to track all pages', function(done){
+      var json = test.fixture('page-all');
+      test
+        .set(settings)
+        .page(json.input)
+        .sends(json.output)
+        .expects(200, done);
+    });
+  
+    it('should be able to track categorized pages', function(done){
+      var json = test.fixture('page-categorized');
+      test
+        .set(settings)
+        .page(json.input)
+        .sends(json.output)
+        .expects(200, done);
+    });
+
+    it('should be able to track named pages', function(done){
+      var json = test.fixture('page-named');
+      test
+        .set(settings)
+        .page(json.input)
+        .sends(json.output)
+        .expects(200, done);
+    });
+  });
+  
+  describe('.screen()', function(){
+    it('should be able to track all screens', function(done){
+      var json = test.fixture('screen-all');
+      test
+        .set(settings)
+        .screen(json.input)
+        .sends(json.output)
+        .expects(200, done);
+    });
+  
+    it('should be able to track categorized screens', function(done){
+      var json = test.fixture('screen-categorized');
+      test
+        .set(settings)
+        .screen(json.input)
+        .sends(json.output)
+        .expects(200, done);
+    });
+
+    it('should be able to track named screens', function(done){
+      var json = test.fixture('screen-named');
+      test
+        .set(settings)
+        .screen(json.input)
+        .sends(json.output)
+        .expects(200, done);
+    });
+  });
+
 });
