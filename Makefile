@@ -6,7 +6,7 @@ GREP ?=.
 default: node_modules test-style test-cov
 
 node_modules: package.json
-	@npm install 
+	@npm install
 
 test:
 	@TZ=UTC ./node_modules/.bin/mocha $(TESTS) \
