@@ -5,7 +5,9 @@ var facade = require('segmentio-facade');
 var mapper = require('../lib/mapper');
 var should = require('should');
 var assert = require('assert');
+var fmt = require('util').format;
 var Calq = require('..');
+var fs = require('fs');
 
 describe('Calq', function () {
   var settings;
@@ -62,7 +64,7 @@ describe('Calq', function () {
 
   describe('.track()', function () {
     it('should be able to track correctly', function(done){
-      var json = test.fixture('track-full');
+      var json = fixture('track-full');
       test
         .set(settings)
         .track(json.input)
@@ -71,7 +73,7 @@ describe('Calq', function () {
     });
 
     it('should be able to track a bare call correctly', function(done){
-      var json = test.fixture('track-basic');
+      var json = fixture('track-basic');
       test
         .set(settings)
         .track(json.input)
@@ -90,7 +92,7 @@ describe('Calq', function () {
 
   describe('.identify()', function () {
     it('should be able to identify correctly', function(done){
-      var json = test.fixture('identify-basic');
+      var json = fixture('identify-basic');
       test
         .identify(json.input)
         .sends(json.output)
@@ -98,7 +100,7 @@ describe('Calq', function () {
     });
 
     it('should error on invalid write key', function(done){
-      var json = test.fixture('identify-basic');
+      var json = fixture('identify-basic');
       test
         .set({ writeKey: 'bad-key' })
         .identify(json.input)
@@ -109,7 +111,7 @@ describe('Calq', function () {
 
   describe('.alias()', function () {
     it('should be able to alias properly', function(done){
-      var json = test.fixture('alias');
+      var json = fixture('alias');
       test
         .alias(json.input)
         .sends(json.output)
@@ -117,7 +119,7 @@ describe('Calq', function () {
     });
 
     it('should error on invalid write key', function(done){
-      var json = test.fixture('alias');
+      var json = fixture('alias');
       test
         .set({ writeKey: 'bad-key' })
         .alias(json.input)
@@ -128,16 +130,16 @@ describe('Calq', function () {
 
   describe('.page()', function(){
     it('should be able to track all pages', function(done){
-      var json = test.fixture('page-all');
+      var json = fixture('page-all');
       test
         .set(settings)
         .page(json.input)
         .sends(json.output)
         .expects(200, done);
     });
-  
+
     it('should be able to track categorized pages', function(done){
-      var json = test.fixture('page-categorized');
+      var json = fixture('page-categorized');
       test
         .set(settings)
         .page(json.input)
@@ -146,7 +148,7 @@ describe('Calq', function () {
     });
 
     it('should be able to track named pages', function(done){
-      var json = test.fixture('page-named');
+      var json = fixture('page-named');
       test
         .set(settings)
         .page(json.input)
@@ -154,19 +156,19 @@ describe('Calq', function () {
         .expects(200, done);
     });
   });
-  
+
   describe('.screen()', function(){
     it('should be able to track all screens', function(done){
-      var json = test.fixture('screen-all');
+      var json = fixture('screen-all');
       test
         .set(settings)
         .screen(json.input)
         .sends(json.output)
         .expects(200, done);
     });
-  
+
     it('should be able to track categorized screens', function(done){
-      var json = test.fixture('screen-categorized');
+      var json = fixture('screen-categorized');
       test
         .set(settings)
         .screen(json.input)
@@ -175,7 +177,7 @@ describe('Calq', function () {
     });
 
     it('should be able to track named screens', function(done){
-      var json = test.fixture('screen-named');
+      var json = fixture('screen-named');
       test
         .set(settings)
         .screen(json.input)
@@ -183,5 +185,17 @@ describe('Calq', function () {
         .expects(200, done);
     });
   });
-
 });
+
+/**
+ * Loads a fixture and adds timestamps.
+ */
+
+function fixture(file){
+  var path = fmt('%s/fixtures/%s.json', __dirname, file);
+  var json = JSON.parse(fs.readFileSync(path));
+  var now = new Date;
+  json.input.timestamp = String(now.getFullYear());
+  json.output.timestamp = fmt('%d-01-01T00:00:00.000Z', now.getFullYear());
+  return json;
+}
