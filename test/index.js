@@ -86,7 +86,7 @@ describe('Calq', function () {
         .set({ writeKey: 'bad-key' })
         .track(helpers.track())
         .expects(403)
-        .error('cannot POST /track (403)', done);
+        .error('Forbidden', done);
     });
   });
 
@@ -105,7 +105,7 @@ describe('Calq', function () {
         .set({ writeKey: 'bad-key' })
         .identify(json.input)
         .expects(403)
-        .error('cannot POST /profile (403)', done);
+        .error('Forbidden', done);
     });
   });
 
@@ -124,7 +124,7 @@ describe('Calq', function () {
         .set({ writeKey: 'bad-key' })
         .alias(json.input)
         .expects(403)
-        .error('cannot POST /transfer (403)', done);
+        .error('Forbidden', done);
     });
   });
 
