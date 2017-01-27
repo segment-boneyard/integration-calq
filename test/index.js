@@ -15,7 +15,7 @@ describe('Calq', function () {
   var test;
 
   beforeEach(function(){
-    settings = { writeKey: '0e116d3930b329831f146716c3667dfe' };
+    settings = { writeKey: '16e9fcd34de8c2f07713d048b92f8c3b' };
     calq = new Calq(settings);
     test = Test(calq, __dirname);
   });
