@@ -1,7 +1,7 @@
 {
   "name": "@segment/integration-calq",
   "version": "1.3.1",
-  "private": true,
+  
   "description": "Calq server-side integration",
   "author": "Segment <friends@segment.com>",
   "repository": {
